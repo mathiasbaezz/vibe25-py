@@ -2,64 +2,74 @@
 
   <footer id="footer" class="footer dark-background">
 
-    <div class="container footer-top">
-      <div class="row gy-4">
+    <div class="container footer-top" style="padding-bottom: 0px;">
+      <div class="row gy-4" >
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">VIBE</span>
+          <a href="/" class="logo d-flex align-items-center">
+              <img src="{% static "img/logo vibe white.png" %}" alt="">
           </a>
           <div class="footer-contact pt-3">
+              <p> <span><a href="mailto:informacion@vibe.com.py" style="text-decoration: none; color: inherit;">informacion@vibe.com.py</a></span></p>
+              <p> <span><a href="tel:+595972169723" style="text-decoration: none; color: inherit;">
+                    +595 972 169 723
+                  </a></span></p>
             <p>Juan Ángel Benítez e/ Silvio Pettirossi y Padre Molas</p>
             <p>Coronel Oviedo, Paraguay</p>
-            <p class="mt-3"><strong>Teléfono:</strong> <span>+595 972 169 723</span></p>
-            <p><strong>Email:</strong> <span>informacion@vibe.com.py</span></p>
+
+
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+              {% for contacto in contacto %}
+              <a href="{{ contacto.instagram }}"><i class="bi bi-instagram"></i></a>
+              <a href="{{ contacto.whatsapp }}"><i class="bi bi-whatsapp"></i></a>
+              <a href="{{ contacto.facebook }}"><i class="bi bi-facebook"></i></a>
+            <a href="{{ contacto.twitter }}"><i class="bi bi-twitter-x"></i></a>
+            <a href="{{ contacto.linkedin }}"><i class="bi bi-linkedin"></i></a>
+              {% endfor %}
           </div>
         </div>
 
        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Acerca de</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Inicio</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Sobre Nosotros</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Nuestros Servicios</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#sobre_nosotros">Sobre Nosotros</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#servicios">Nuestros Servicios</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Noticias</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Preguntas Frecuentes</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Políticas de Privacidad</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Términos de Uso</a></li>
+
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Nuestros Servicios</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Cursillo VIBE</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Residencia VIBE</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Young Engineers COV</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Clases de Apoyo VIBE</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Cursillo Becas Gobierno PY</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Librería VIBE</a></li>
           </ul>
         </div>
 
         <div class="col-lg-4 col-md-12 footer-newsletter">
           <h4>Boletín Informativo</h4>
           <p>¡Suscríbete a nuestro boletín informativo y recibe las últimas novedades sobre nuestros productos y servicios!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
+          <!--<form action="forms/newsletter.php" method="post" class="php-email-form">
             <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Suscribirse"></div>
             <div class="loading">Loading</div>
             <div class="error-message"></div>
             <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
+          </form>-->
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">VIBE</strong> <span>Todos los Derechos Reservados.</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">VIBE</strong> <script>document.write(new Date().getFullYear());</script>.<span> Todos los Derechos Reservados.</span></p>
     </div>
 
   </footer>
@@ -79,6 +89,9 @@
   <script src="{% static "vendor/swiper/swiper-bundle.min.js" %}"></script>
   <script src="{% static "vendor/imagesloaded/imagesloaded.pkgd.min.js" %}"></script>
   <script src="{% static "vendor/isotope-layout/isotope.pkgd.min.js" %}"></script>
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  </script>
 
   <!-- Main JS File -->
   <script src="{% static "js/main.js" %}"></script>

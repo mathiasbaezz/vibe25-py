@@ -1,0 +1,52 @@
+{% load static %}
+{% include "header.html" %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div data-aos="fade" >
+        <br>
+    </div><br><br><br><!-- End Page Title -->
+
+          <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+                <h1><b>Preguntas frecuentes</b></h1>
+              <h5>
+                Encuentra respuestas a las preguntas más comunes y despeja tus dudas fácilmente
+              </h5><br><br>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="faq-container">
+                {% for preguntas in preguntas %}
+              <div class="faq-item " style="border-radius: 15px">
+                <h3>{{ preguntas.pregunta}}</h3>
+                <div class="faq-content">
+                  <p>{{ preguntas.respuesta}}</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+                {% endfor %}
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+
+  </main>
+
+ {% include "footer.html" %}

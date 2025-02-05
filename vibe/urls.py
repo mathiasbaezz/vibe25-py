@@ -24,7 +24,19 @@ urlpatterns = [
     path('', views.raiz),
     path('inicio/', views.index),
     path('casos_de_exito/', views.detalles_porfolio),
-    path('services/', views.service_details),
+    path('cursillo_vibe/', views.cursillo_vibe),
+    path('cursillo_vibe/<int:pk>/', views.cursillo_vibe_details, name='cursillo_vibe_details'),
+    path('young_engineers_cov/', views.young_engcov),
+    path('cursillo_becas/', views.cursillo_becas),
+    path('cursillo_becas/<int:pk>/', views.cursillo_becas_details, name='cursillo_becas_details'),
+    path('clases_de_apoyo/', views.clases_apoyo),
+    path('clases_de_apoyo/<int:pk>/', views.clases_apoyo_details, name='clases_apoyo_details'),
+    path('residencia/', views.residencia),
+    path('residencia/<int:pk>/', views.residencia_details, name='residencia_details'),
+    path('noticias/' , views.noticias),
+    path('noticias/<int:pk>/', views.noticias_details, name='noticias_details'),
+    path('libreria/', views.libreria),
+    path('preguntas_frecuentes/', views.preguntas_frecuentes),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

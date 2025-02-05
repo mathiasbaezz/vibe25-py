@@ -1,0 +1,120 @@
+{% load static %}
+{% include "header.html" %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div data-aos="fade" >
+    </div><br><br><br><br><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Details Section -->
+          <section  id="noticias" class="blog-details section" style="padding-bottom: 0px;">
+            <div class="container">
+
+              <article style="border-radius: 15px" class="article">
+
+                <div class="post-img">
+                  <img src="{% static "img/" %}{{ articulo.imagen }}" alt="" class="img-fluid">
+                </div>
+
+                <h2 class="title">{{ articulo.titulo }}</h2>
+
+                <div class="meta-top">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{articulo.autor}}</li>
+                    <li class="d-flex align-items-center"><i class="bi bi-calendar4-event"></i> <time datetime="2020-01-01">{{ articulo.fecha }}</time></li>
+                  </ul>
+                </div><!-- End meta top -->
+
+                <div class="content">
+                  <p>
+                      {{ articulo.texto|linebreaksbr }}
+                  </p>
+
+                </div><!-- End post content -->
+
+                <div class="meta-bottom">
+                  <i class="bi bi-tags"></i>
+                  <ul class="tags">
+                    <li><a href="#">{{ articulo.categoria_1.nombre }}</a></li>
+                    <li><a href="#">{{ articulo.categoria_2.nombre }}</a></li>
+                    <li><a href="#">{{ articulo.categoria_3.nombre }}</a></li>
+                  </ul>
+                </div><!-- End meta bottom -->
+
+              </article>
+
+            </div>
+          </section><br><!-- /Blog Details Section -->
+
+        </div>
+
+        <div  class="col-lg-4 sidebar">
+
+          <div style="border-radius: 15px"  class="widgets-container">
+                          <!-- Clima Widget -->
+            <div class=" widget-item">
+
+                <a class="weatherwidget-io" href="https://forecast7.com/es/n25d36n56d46/coronel-oviedo/" data-label_1="CORONEL OVIEDO" data-label_2="Ahora" data-font="Roboto" data-icons="Climacons Animated" data-days="3" data-theme="pure" >CORONEL OVIEDO Ahora</a>
+
+
+            </div><!--/Categories Widget -->
+
+            <!-- Categories Widget -->
+            <!--<div class="categories-widget widget-item">
+
+              <h3 class="widget-title">Categories</h3>
+              <ul class="mt-3">
+                <li><a href="#">General <span>(25)</span></a></li>
+                <li><a href="#">Lifestyle <span>(12)</span></a></li>
+                <li><a href="#">Travel <span>(5)</span></a></li>
+                <li><a href="#">Design <span>(22)</span></a></li>
+                <li><a href="#">Creative <span>(8)</span></a></li>
+                <li><a href="#">Educaion <span>(14)</span></a></li>
+              </ul>
+
+            </div>--><!--/Categories Widget -->
+
+            <!-- Recent Posts Widget -->
+            <div class="recent-posts-widget widget-item">
+
+              <h3 class="widget-title">Últimas Noticias</h3>
+              {% for articulos in articulos %}
+              <div class="post-item">
+                <img src="{% static "img/" %}{{ articulos.imagen }}" alt="" class="flex-shrink-0">
+                <div>
+                  <h4><a href="/noticias/{{ articulos.id }}">{{ articulos.titulo}}</a></h4>
+                  <time datetime="2020-01-01"><i class="bi bi-clock"></i> {{ articulos.fecha}}</time>
+                </div>
+              </div><!-- End recent post item-->
+                {% endfor %}
+
+            </div><!--/Recent Posts Widget -->
+
+            <!-- Tags Widget -->
+            <div class="tags-widget widget-item" >
+
+              <h3 class="widget-title">Categorías</h3>
+                <ul>
+                    {% for categoria in categorias %}
+                        <li><a style="border-radius: 10px;" href="#">{{ categoria.nombre }}</a></li>
+                    {% endfor %}
+                </ul>
+
+            </div><!--/Tags Widget -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+{% include "footer.html" %}

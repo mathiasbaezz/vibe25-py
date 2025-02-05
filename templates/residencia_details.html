@@ -1,0 +1,178 @@
+{% load static %}
+{% include "header.html" %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div data-aos="fade" >
+        <br>
+    </div><br><br><br><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="servicios" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+
+
+          <div  class="col-lg-9 ps-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <img style="max-width: 400px; display: block; margin: 0 auto;" src="{% static 'img/res1.png' %}" alt="" class="img-fluid services-img"><br>
+              <h2 style="text-align: center"><b>¿Buscando un lugar acogedor para vivir mientras estudias?</b></h2><br>
+            <h5 style="text-align: center">
+                Aprovechá las promociones que tenemos para vos en nuestra residencia universitaria.
+            </h5>
+
+              <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="row g-4">
+            <div class="col-lg-8 " >
+                <div class="portfolio-details-slider swiper init-swiper">
+
+                      <script type="application/json" class="swiper-config">
+                        {
+                          "loop": true,
+                          "speed": 600,
+                          "autoplay": {
+                            "delay": 5000
+                          },
+                          "slidesPerView": "auto",
+                          "pagination": {
+                            "el": ".swiper-pagination",
+                            "type": "bullets",
+                            "clickable": true
+                          }
+                        }
+                      </script>
+
+                      <div  class="swiper-wrapper align-items-center">
+
+                        <div class="swiper-slide">
+                          <img style="border-radius: 15px" src="{% static "img/" %}{{ residencia.imagen_1 }}" alt="">
+                        </div>
+                          <div class="swiper-slide">
+                          <img style="border-radius: 15px" src="{% static "img/" %}{{ residencia.imagen_2 }}" alt="">
+                        </div>
+                          <div class="swiper-slide">
+                          <img style="border-radius: 15px" src="{% static "img/" %}{{ residencia.imagen_3 }}" alt="">
+                        </div>
+                          <div class="swiper-slide">
+                          <img style="border-radius: 15px" src="{% static "img/" %}{{ residencia.imagen_4 }}" alt="">
+                        </div>
+                          <div class="swiper-slide">
+                          <img style="border-radius: 15px" src="{% static "img/" %}{{ residencia.imagen_5 }}" alt="">
+                        </div>
+                          <div class="swiper-slide">
+                          <img style="border-radius: 15px" src="{% static "img/" %}{{ residencia.imagen_6 }}" alt="">
+                        </div>
+
+
+                      </div>
+                    <div class="swiper-pagination"></div>
+                    </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-body">
+                  <h4><b>{{ residencia.nombre_habitacion}}</b></h4>
+                <p class="card-text" > {{ residencia.descripcion }}</p>
+
+                <div  class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+
+
+              </div><br>
+                <div >
+              <h2><sup>₲</sup>{{ residencia.precio }} / {{ residencia.tipo_de_pago }}</h2>
+              <ul>
+                  <li ><p>{{ residencia.cantidad_de_personas}}</p></li>
+                  <li><a href="{{residencia.enlace_whatsapp}}" class="btn-visit align-self-start"><i style="color: white" class="bi bi-whatsapp"></i> Consultar disponibilidad </a></li>
+              </ul>
+            </div>
+            </div>
+              <div  class="col-lg-12 ps-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h4 style="text-align: center"><b>
+              Servicios que incluye la habitación</b>
+            </h4><br>
+                    <div class="container">
+                      <div class="row ">
+                        <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-water"></i> <span> Lavandería</span></div>
+                        <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-shield-check"></i> <span> Seguridad</span></div>
+                        <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-droplet"></i> <span> Agua</span></div>
+                        <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-lightning"></i> <span> Luz</span></div>
+                          <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-wifi"></i> <span> Wifi</span></div>
+                          <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-p-circle"></i> <span> Estacionamiento</span></div>
+                          <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-arrows-fullscreen"></i> <span> Amplio patio</span></div>
+                          <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-speaker"></i> <span> Quincho</span></div>
+                          <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-book"></i> <span> Sala de estudio</span></div>
+                          <div class="col-lg-3 col-md-6 col-12"><i style="color:#ff4a17;" class="bi bi-trash"></i> <span> Recolección de basura</span></div>
+                      </div>
+                    </div>
+                        </div><br>
+
+              <h4 style="text-align: center" data-aos="fade-up" data-aos-delay="300"><b>
+              Ubicación de la Residencia VIBE</b>
+            </h4><br>
+              <iframe data-aos="fade-up" data-aos-delay="300" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1514.7705643521172!2d-56.43941373886069!3d-25.446558006838686!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945ee945bb7229b5%3A0x875cf9cfb5ec06f2!2sVIBE%20EAS!5e0!3m2!1ses-419!2spy!4v1739755645328!5m2!1ses-419!2spy" width="600" height="350" style="border-radius:25px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+          </div>
+
+
+
+
+
+      </div>
+
+
+
+    </section><!-- /Portfolio Details Section -->
+
+                  </div>
+
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+
+            <div style="border-radius: 15px" class="service-box">
+              <h4>Servicios</h4>
+              <div class="services-list">
+                <a style="border-radius: 15px" href="http://127.0.0.1:8000/services/" ><i class="bi bi-arrow-right-circle"></i><span>Cursillo VIBE</span></a>
+                <a style="border-radius: 15px" href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Residencia VIBE</span></a>
+                <a style="border-radius: 15px" href="http://127.0.0.1:8000/serviceye/"><i class="bi bi-arrow-right-circle"></i><span>Young Engineers</span></a>
+                <a style="border-radius: 15px" href="http://127.0.0.1:8000/becas" ><i class="bi bi-arrow-right-circle"></i><span>Cursillo Becas Gobierno PY</span></a>
+                <a style="border-radius: 15px" href="http://127.0.0.1:8000/apoyo/"><i class="bi bi-arrow-right-circle"></i><span>Clases de Apoyo VIBE</span></a>
+                  <a style="border-radius: 15px" href="#"><i class="bi bi-arrow-right-circle"></i><span>Librería VIBE</span></a>
+              </div>
+            </div><!-- End Services List -->
+
+
+            <div style="border-radius: 15px" class="help-box d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-headset help-icon"></i>
+              <h4>Dudas o Consultas</h4>
+                <p class="d-flex align-items-center mt-2 mb-0">
+                  <i class="bi bi-telephone me-2"></i>
+                  <a href="tel:+595972169723" style="text-decoration: none; color: inherit;">
+                    +595 972 169 723
+                  </a>
+                </p>
+              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-whatsapp me-2"></i> <a href="https://wa.link/jvs64k">Hablar por WhatsApp</a></p>
+              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:informacion@vibe.com.py">informacion@vibe.com.py</a></p>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+      <!-- /Service Details Section -->
+
+
+
+  </main>
+
+ {% include "footer.html" %}
